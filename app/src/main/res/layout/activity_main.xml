@@ -4,15 +4,121 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/black"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:background="@android:color/white"
+        android:fontFamily="cursive"
+        android:text="@string/SelectGame"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <ImageButton
+        android:id="@+id/Game1Btn"
+        android:layout_width="142dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:background="@null"
+        android:padding="0dp"
+        android:contentDescription="Game 1 Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/halloween_devil_2_round" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="142dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:contentDescription="Game 2 Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Game1Label"
+        app:srcCompat="@drawable/halloween_devil_2_round" />
+
+    <TextView
+        android:id="@+id/Game2Label"
+        android:layout_width="133dp"
+        android:layout_height="54dp"
+        android:fontFamily="cursive"
+        android:text="@string/game2_name"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game3Btn" />
+
+    <TextView
+        android:id="@+id/Game1Label"
+        android:layout_width="133dp"
+        android:layout_height="54dp"
+        android:fontFamily="cursive"
+        android:text="@string/game1_name"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Game1Btn" />
+
+    <ImageButton
+        android:id="@+id/game3Btn"
+        android:layout_width="142dp"
+        android:layout_height="120dp"
+        android:background="@null"
+        android:contentDescription="Game 3 Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game3Label"
+        app:srcCompat="@drawable/halloween_devil_2_round" />
+
+    <TextView
+        android:id="@+id/game3Label"
+        android:layout_width="133dp"
+        android:layout_height="54dp"
+        android:fontFamily="cursive"
+        android:text="@string/game3_name"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
+
+    <TextView
+        android:id="@+id/creditsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="@string/BroughtToYouBy"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Game2Label" />
+
+    <Button
+        android:id="@+id/aboutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="@string/aboutString"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/creditsLabel" />
 </androidx.constraintlayout.widget.ConstraintLayout>
