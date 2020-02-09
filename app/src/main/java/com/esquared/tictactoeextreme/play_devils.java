@@ -50,7 +50,7 @@ public class play_devils extends AppCompatActivity
             p1Turn = false;
         }
         };
-       /* Button resetbutton = findViewById(R.id.reset_button);
+       /*  Button resetbutton = findViewById(R.id.reset_button);
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
