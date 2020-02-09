@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Tic Tac Toe Extreme</string>
     <string name="SelectGame">Select A Game Below</string>
-    <string name="game1_name">Game 1</string>
+    <string name="game1_name">Devil\'s Tic Tac Toe</string>
     <string name="game2_name">Game 2</string>
     <string name="game3_name">Game 3</string>
     <string name="DevTeam">E<sup>2</sup></string>
