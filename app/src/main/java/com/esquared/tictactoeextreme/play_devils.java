@@ -43,9 +43,11 @@ public class play_devils extends AppCompatActivity
         if(myRand() == 0){
             player_tv.setText("Player 1: Make your move");
             xORo = 'X';
+            p1Turn = true;
         }else{
             player_tv.setText("Player 2: Make your move");
             xORo = 'O';
+            p1Turn = false;
         }
         };
        /* Button resetbutton = findViewById(R.id.reset_button);
@@ -103,7 +105,7 @@ public class play_devils extends AppCompatActivity
         } else {
             if (myRand() == 0) {
                 p1Turn = true;
-                xORo = 'x';
+                xORo = 'X';
                 player_tv.setText("Player 1: Back to you!");
             } else {
                 p1Turn = false;
