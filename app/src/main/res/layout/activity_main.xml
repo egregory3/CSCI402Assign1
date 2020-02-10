@@ -23,7 +23,7 @@
 
 
     <ImageButton
-        android:id="@+id/Game1Btn"
+        android:id="@+id/game1Btn"
         android:layout_width="142dp"
         android:layout_height="120dp"
         android:layout_marginStart="16dp"
@@ -37,7 +37,7 @@
         app:srcCompat="@drawable/halloween_devil_2_round" />
 >
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/game2Btn"
         android:layout_width="142dp"
         android:layout_height="120dp"
         android:layout_marginTop="8dp"
@@ -50,11 +50,11 @@
         app:srcCompat="@drawable/halloween_devil_2_round" />
 
     <TextView
-        android:id="@+id/Game2Label"
+        android:id="@+id/game3Label"
         android:layout_width="133dp"
         android:layout_height="54dp"
         android:fontFamily="cursive"
-        android:text="@string/game2_name"
+        android:text="@string/game3_name"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="28sp"
@@ -73,7 +73,7 @@
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Game1Btn" />
+        app:layout_constraintTop_toBottomOf="@+id/game1Btn" />
 
     <ImageButton
         android:id="@+id/game3Btn"
@@ -82,22 +82,23 @@
         android:background="@null"
         android:contentDescription="Game 3 Button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/game3Label"
+        app:layout_constraintTop_toBottomOf="@+id/game2Label"
         app:srcCompat="@drawable/halloween_devil_2_round" />
 
     <TextView
-        android:id="@+id/game3Label"
+        android:id="@+id/game2Label"
         android:layout_width="133dp"
-        android:layout_height="54dp"
+        android:layout_height="wrap_content"
         android:fontFamily="cursive"
-        android:text="@string/game3_name"
+        android:text="@string/game2_name"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
+        app:layout_constraintTop_toBottomOf="@+id/game2Btn" />
 
     <TextView
         android:id="@+id/creditsLabel"
@@ -109,7 +110,7 @@
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Game2Label" />
+        app:layout_constraintTop_toBottomOf="@+id/game3Label" />
 
     <Button
         android:id="@+id/aboutBtn"
