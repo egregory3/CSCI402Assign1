@@ -1,7 +1,7 @@
-//Eric Gregory
-//CSCI 4010, Spring 2019
+//Eric Gregory and Eric Raymond
+//CSCI 4020, Fall 2020
 //Professor John Nicholson
-//Assignment 5
+//Assignment 1
 
 package com.esquared.tictactoeextreme;
 import android.content.DialogInterface;
@@ -13,7 +13,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Random;
 
 public class play_devils extends AppCompatActivity
         implements View.OnClickListener {
@@ -23,6 +22,7 @@ public class play_devils extends AppCompatActivity
     private char xORo = 'X';
     private String winplayer = "";
     TextView player_tv;
+    Button xORo_Btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,38 +37,20 @@ public class play_devils extends AppCompatActivity
                 buttons[i][j].setOnClickListener(this);
 
                 player_tv = findViewById(R.id.playerTV);
-            }
-        }
+                xORo_Btn = findViewById(R.id.xOro_Btn);
 
-        if(myRand() == 0){
-            player_tv.setText("Player 1: Make your move");
-            xORo = 'X';
-            p1Turn = true;
-        }else{
-            player_tv.setText("Player 2: Make your move");
-            xORo = 'O';
-            p1Turn = false;
+                player_tv.setText(R.string.DevilsP1);
+                xORo_Btn.setText("Playing: X, CLICK TO SWITCH TO: O");
+                xORo_Btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        switchPlay();
+                    }
+                });
+
+            }
         }
         };
-       /*  Button resetbutton = findViewById(R.id.reset_button);
-        resetButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                for(int i = 0; i < 6; i++){
-                    for(int j = 0; j < 6; j++) {
-                        buttons[i][j].setText("");
-                        buttons[i][j].setBackgroundResource(android.R.drawable.btn_default);
-                        roundCount = 0;
-                        orderTurn = true;
-                        xORo = 'X';
-                        player_tv.setText("Order: Make Your Move!");
-                        playButton.setText("Current:X, Click to Change");
-                    }
-                }
-            }
-        });
-    }*/
-
 
     @Override
     public void onClick(View v) {
@@ -92,27 +74,7 @@ public class play_devils extends AppCompatActivity
 
         }
 
-        if (p1Turn ){
-            if (myRand() == 0) {
-                p1Turn = true;
-                xORo = 'X';
-                player_tv.setText("Player 1: Go Again!");
-            }else{
-                p1Turn = false;
-                xORo = 'O';
-                player_tv.setText("Player 2: Back to you!");
-            }
-        } else {
-            if (myRand() == 0) {
-                p1Turn = true;
-                xORo = 'X';
-                player_tv.setText("Player 1: Back to you!");
-            } else {
-                p1Turn = false;
-                xORo = 'O';
-                player_tv.setText("Player 2: Go Again!");
-            }
-        }
+
         gamewon = checkWin();
         if(gamewon){
             AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
@@ -128,13 +90,7 @@ public class play_devils extends AppCompatActivity
                             roundCount = 0;
                             p1Turn = true;
                             xORo = 'X';
-                            if(myRand() == 0){
-                                player_tv.setText("Player 1: Make your move");
-                                xORo = 'X';
-                            }else{
-                                player_tv.setText("Player 2: Make your move");
-                                xORo = 'O';
-                            }
+                            player_tv.setText(R.string.DevilsP1);
                         }
                     }
                 }
@@ -154,7 +110,7 @@ public class play_devils extends AppCompatActivity
                             roundCount = 0;
                             p1Turn = true;
                             xORo = 'X';
-                            player_tv.setText("Player 1: Make Your Move!");
+                            player_tv.setText(R.string.DevilsP1);
                         }
                     }
                 }
@@ -162,9 +118,26 @@ public class play_devils extends AppCompatActivity
             builder.show();
         }
 
+        if (p1Turn ){
+            p1Turn = false;
+            player_tv.setText(R.string.DevilsP2);
+        }else{
+            p1Turn = true;
+            player_tv.setText(R.string.DevilsP1);
 
+        }
     }
 
+    public void switchPlay() {
+        if(xORo == 'X'){
+            xORo = 'O';
+            xORo_Btn.setText("Playing: O, CLICK TO SWITCH TO: X");
+
+        }else{
+            xORo = 'X';
+            xORo_Btn.setText("Playing X, CLICK TO SWitch TO: O");
+        }
+    }
     public boolean checkWin() {
         String[][] field = new String[3][3];
         for (int i = 0; i < 3; i++) {
@@ -175,7 +148,7 @@ public class play_devils extends AppCompatActivity
 
         for (int i = 0; i < 3; i++) {
             if (field[i][0].equals(field[i][1]) && field[i][0].equals(field[i][2]) && (!(field[i][0]).equals(""))) {
-                if (field[i][0] == "X"){
+                if (p1Turn == true){
                     winplayer = "1";
                 }else{
                     winplayer = "2";
@@ -188,7 +161,7 @@ public class play_devils extends AppCompatActivity
 
         for (int i = 0; i < 3; i++) {
             if (field[0][i].equals(field[1][i]) && field[0][i].equals(field[2][i]) && (!(field[0][i].equals("")))) {
-                if (field[0][i] == "X"){
+                if (p1Turn == true){
                     winplayer = "1";
                 }else{
                     winplayer = "2";
@@ -198,27 +171,25 @@ public class play_devils extends AppCompatActivity
 
 
             if(field[0][0].equals(field[1][1]) && field[0][0].equals(field[2][2]) && !(field[1][1].equals(""))) {
-                if (field[0][0] == "X"){
+                if (p1Turn == true){
                     winplayer = "1";
                 }else{
                     winplayer = "2";
                 }
                 return true;
             }
-            if(field[0][2].equals(field[2][2]) && field[0][2].equals(field[2][0]) && !(field[2][2].equals(""))){
-                if (field[0][2] == "X"){
+            if(field[0][2].equals(field[1][1]) && field[0][2].equals(field[2][0]) && !(field[0][2].equals(""))){
+                if (p1Turn == true){
                     winplayer = "1";
                 }else{
                     winplayer = "2";
                 }
+                return true;
             }
 
         }
         return false;
     }
-    public int myRand(){
-        final int random = new Random().nextInt();
-        return random %2;
-    }
+
 };
 

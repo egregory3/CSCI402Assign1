@@ -9,7 +9,7 @@
         android:id="@+id/rulesTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Player chosen at random each time, Player 1 plays x, player 2 plays o.  Match three in a row to win. Watch Below to see who's turn it is!"
+        android:text="Players choose to play an X or an 0 on each turn.  Either player that gets 3 in a row or either X or 0 wins!"
         android:textColor="@android:color/white"></TextView>
 
     <TextView
@@ -17,6 +17,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"></TextView>
+
+
+    <Button
+        android:id="@+id/xOro_Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -42,7 +50,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="30sp"/>
+            android:textSize="30sp" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

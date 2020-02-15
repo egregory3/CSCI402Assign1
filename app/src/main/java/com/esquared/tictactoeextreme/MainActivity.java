@@ -1,3 +1,8 @@
+//Eric Gregory and Eric Raymond
+//CSCI 4020, Fall 2020
+//Professor John Nicholson
+//Assignment 1
+
 package com.esquared.tictactoeextreme;
 
 import android.content.Intent;

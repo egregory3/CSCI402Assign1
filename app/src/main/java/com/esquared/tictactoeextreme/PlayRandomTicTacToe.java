@@ -12,6 +12,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+//Eric Gregory and Eric Raymond
+//CSCI 4020, Fall 2020
+//Professor John Nicholson
+//Assignment 1
+
 import java.util.Random;
 
 public class PlayRandomTicTacToe extends AppCompatActivity
