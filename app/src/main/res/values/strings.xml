@@ -8,4 +8,7 @@
     <string name="BroughtToYouBy">Brought to you by E<sup>2</sup></string>
     <string name="aboutString">About This App</string>
     <string name="appVersion">0.01</string>
+    <string name="rules">Place holder</string>
+    <string name="flip_coin">Flip coin</string>
+    <string name="the_coin_flip_determines_whose_turn_it_is_get_three_of_your_leter_x_or_0_in_a_row_horizontally_vertically_or_diagnonally_to_win">CoinFlipStatement</string>
 </resources>
