@@ -49,7 +49,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Game1Label"
-        app:srcCompat="@drawable/halloween_devil_2_round" />
+        app:srcCompat="@drawable/dice1" />
 
     <TextView
         android:id="@+id/game3Label"
@@ -87,7 +87,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/game2Label"
-        app:srcCompat="@drawable/halloween_devil_2_round" />
+        app:srcCompat="@drawable/fifteen" />
 
     <TextView
         android:id="@+id/game2Label"
@@ -114,14 +114,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/game3Label" />
 
-    <Button
-        android:id="@+id/aboutBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="@string/aboutString"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/creditsLabel" />
 </androidx.constraintlayout.widget.ConstraintLayout>
