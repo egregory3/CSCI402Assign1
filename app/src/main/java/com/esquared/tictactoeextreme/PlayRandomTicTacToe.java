@@ -243,12 +243,13 @@ public class PlayRandomTicTacToe extends AppCompatActivity
                 }
                 return true;
             }
-            if (field[0][2].equals(field[2][2]) && field[0][2].equals(field[2][0]) && !(field[2][2].equals(""))) {
+            if (field[0][2].equals(field[1][1]) && field[0][2].equals(field[2][0]) && !(field[0][2].equals(""))) {
                 if (field[0][2] == "X") {
                     winPlayer = "1";
                 } else {
                     winPlayer = "2";
                 }
+                return true;
             }
 
         }
