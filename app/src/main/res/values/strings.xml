@@ -8,13 +8,17 @@
     <string name="BroughtToYouBy">Brought to you by E<sup>2</sup></string>
     <string name="aboutString">About This App</string>
     <string name="appVersion">0.01</string>
-    <string name="rules">Place holder</string>
+    <string name="rules">RULES</string>
     <string name="flip_coin">Flip coin</string>
-    <string name="the_coin_flip_determines_whose_turn_it_is_get_three_of_your_leter_x_or_0_in_a_row_horizontally_vertically_or_diagnonally_to_win">CoinFlipStatement</string>
+    <string name="CoinFlipStatement">Flip the coin to determine whose turn it is. When a player gets three of their leter (x or 0) in a row horizontally, vertically ,or diagonally to win!"</string>
     <string name="DevilsP1">Player 1: Attack!</string>
     <string name="DevilsP2">Player 2: Attack!</string>
     <string name="Playing">Playing: </string>
     <string name="Xpiece">X</string>
     <string name="Opiece">O</string>
     <string name="ClickToSwitch">Click to switch to: </string>
+    <string name="gameRules2">The numbers 1 to 9 are used in this game. The first player plays with the odd numbers and the second player plays with the even numbers. All numbers can be used only once. The player who puts down 15 points in a line wins (sum of 3 numbers).</string>
+    <string name="numberBeingPlayedLabel">Number To Play:  </string>
+    <string name="hint">1- 9</string>
+    <string name="player_1_turn">Player 1\'s Turn</string>
 </resources>
