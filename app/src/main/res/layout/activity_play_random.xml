@@ -28,7 +28,7 @@
             android:id="@+id/gameRulesTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/the_coin_flip_determines_whose_turn_it_is_get_three_of_your_leter_x_or_0_in_a_row_horizontally_vertically_or_diagnonally_to_win"
+            android:text="@string/CoinFlipStatement"
             android:textColor="@android:color/white"
             android:textSize="20sp" />
 
