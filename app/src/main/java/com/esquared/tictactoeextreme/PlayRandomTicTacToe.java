@@ -12,12 +12,12 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Random;
+
 //Eric Gregory and Eric Raymond
 //CSCI 4020, Fall 2020
 //Professor John Nicholson
 //Assignment 1
-
-import java.util.Random;
 
 public class PlayRandomTicTacToe extends AppCompatActivity
         implements View.OnClickListener {
@@ -59,7 +59,6 @@ public class PlayRandomTicTacToe extends AppCompatActivity
                         playerTextView.setText("Player 1: Make your move");
                         playerTextView.setGravity(Gravity.CENTER);
                         playerTextView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-
                         xORo = 'X';
                         p1Turn = true;
                     } else {
@@ -123,7 +122,7 @@ public class PlayRandomTicTacToe extends AppCompatActivity
 
     @Override
     public void onClick(View v) {
-        if (coinFlipCount <= roundCount) {
+        if ((coinFlipCount <= roundCount) || (playerTextView.equals(""))) {
             Toast.makeText(getApplicationContext(), "You must flip the coin to see whose turn is next!", Toast.LENGTH_SHORT).show();
         } else {
             boolean gamewon = false;
@@ -159,26 +158,16 @@ public class PlayRandomTicTacToe extends AppCompatActivity
                                 buttons[i][j].setText("");
                                 buttons[i][j].setBackgroundResource(android.R.drawable.btn_default);
                                 roundCount = 0;
-                                p1Turn = true;
-                                xORo = 'X';
-                                if (myRand() == 0) {
-                                    playerTextView.setText("Player 1: Make your move");
-                                    playerTextView.setGravity(Gravity.CENTER);
-                                    playerTextView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                                    xORo = 'X';
-                                } else {
-                                    playerTextView.setText("Player 2: Make your move");
-                                    playerTextView.setGravity(Gravity.CENTER);
-                                    playerTextView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                                    xORo = 'O';
-                                }
+                                coinFlipCount = 0;
+                                playerTextView.setText("");
+
                             }
                         }
                     }
                 });
                 builder.show();
             }
-            if (roundCount == 9) {
+            if (roundCount == 9 && (checkWin() == false)) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
                 builder.setTitle("Draw");
                 builder.setMessage("This game has resulted in a draw.  Play again");
@@ -188,10 +177,10 @@ public class PlayRandomTicTacToe extends AppCompatActivity
                         for (int i = 0; i < 3; i++) {
                             for (int j = 0; j < 3; j++) {
                                 buttons[i][j].setText("");
+                                buttons[i][j].setBackgroundResource(android.R.drawable.btn_default);
                                 roundCount = 0;
-                                p1Turn = true;
-                                xORo = 'X';
-                                playerTextView.setText("Player 1: Make Your Move!");
+                                coinFlipCount = 0;
+                                playerTextView.setText("");
                             }
                         }
                     }
