@@ -10,7 +10,7 @@
     <string name="appVersion">0.01</string>
     <string name="rules">RULES</string>
     <string name="flip_coin">Flip coin</string>
-    <string name="CoinFlipStatement">Flip the coin to determine whose turn it is. When a player gets three of their leter (x or 0) in a row horizontally, vertically ,or diagonally to win!"</string>
+    <string name="CoinFlipStatement">Flip the coin to determine whose turn it is. When a player gets three of their letter (x or 0) in a row horizontally, vertically ,or diagonally to win!"</string>
     <string name="DevilsP1">Player 1: Attack!</string>
     <string name="DevilsP2">Player 2: Attack!</string>
     <string name="Playing">Playing: </string>
