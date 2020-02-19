@@ -107,6 +107,7 @@ public class play_devils extends AppCompatActivity
                     for(int i = 0; i < 3; i++){
                         for(int j = 0; j < 3; j++) {
                             buttons[i][j].setText("");
+                            buttons[i][j].setBackgroundResource(android.R.drawable.btn_default);
                             roundCount = 0;
                             p1Turn = true;
                             xORo = 'X';
