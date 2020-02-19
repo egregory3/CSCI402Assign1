@@ -16,8 +16,8 @@
             android:name=".PlayRandomTicTacToe"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PlayNumberScrabble"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:name=".PlayNumberScrabble" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
