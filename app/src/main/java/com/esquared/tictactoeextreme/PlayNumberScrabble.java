@@ -121,36 +121,6 @@ public class PlayNumberScrabble extends AppCompatActivity
 
                         builder.show();
                     }
-                    if (roundCount == 9 && (checkWin() == false)) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-                        builder.setTitle("Draw");
-                        builder.setMessage("This game has resulted in a draw.  Play again");
-                        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                for (int i = 0; i <= 2; i++) {
-                                    for (int j = 0; j <= 2; j++) {
-                                        buttons[i][j].setText("");
-
-                                    }
-                                }
-
-                                roundCount = 0;
-                                p1Turn = true;
-                                playerTextView.setText("Player 1's Turn!");
-                                for (int k = 1; k <= 9; k = k + 2) {
-                                    player1NumberBank.add(k);
-                                }
-
-                                for (int k = 2; k <= 9; k = k + 2) {
-                                    player2NumberBank.add(k);
-                                }
-                            }
-                        });
-
-                        builder.show();
-                    }
-
 
                 } else {
                     Toast.makeText(getApplicationContext(), "Please input a number according to the rules!", Toast.LENGTH_SHORT).show();
@@ -199,35 +169,7 @@ public class PlayNumberScrabble extends AppCompatActivity
 
                         builder.show();
                     }
-                    if (roundCount == 9 && (checkWin() == false)) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-                        builder.setTitle("Draw");
-                        builder.setMessage("This game has resulted in a draw.  Play again");
-                        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                for (int i = 0; i <= 2; i++) {
-                                    for (int j = 0; j <= 2; j++) {
-                                        buttons[i][j].setText("");
 
-                                    }
-                                }
-
-                                roundCount = 0;
-                                p1Turn = true;
-                                playerTextView.setText("Player 1's Turn!");
-                                for (int k = 1; k <= 9; k = k + 2) {
-                                    player1NumberBank.add(k);
-                                }
-
-                                for (int k = 2; k <= 9; k = k + 2) {
-                                    player2NumberBank.add(k);
-                                }
-                            }
-                        });
-
-                        builder.show();
-                    }
 
                 } else {
                     Toast.makeText(getApplicationContext(), "Please input a number according to the rules!", Toast.LENGTH_SHORT).show();
@@ -239,6 +181,35 @@ public class PlayNumberScrabble extends AppCompatActivity
 
 
         roundCount++;
+        if (roundCount == 9 && (checkWin() == false)) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+            builder.setTitle("Draw");
+            builder.setMessage("This game has resulted in a draw.  Play again");
+            builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    for (int i = 0; i <= 2; i++) {
+                        for (int j = 0; j <= 2; j++) {
+                            buttons[i][j].setText("");
+
+                        }
+                    }
+
+                    roundCount = 0;
+                    p1Turn = true;
+                    playerTextView.setText("Player 1's Turn!");
+                    for (int k = 1; k <= 9; k = k + 2) {
+                        player1NumberBank.add(k);
+                    }
+
+                    for (int k = 2; k <= 9; k = k + 2) {
+                        player2NumberBank.add(k);
+                    }
+                }
+            });
+
+            builder.show();
+        }
 
 
     }
