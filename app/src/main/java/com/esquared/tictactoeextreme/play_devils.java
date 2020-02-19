@@ -4,6 +4,7 @@
 //Assignment 1
 
 package com.esquared.tictactoeextreme;
+
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
@@ -29,8 +30,8 @@ public class play_devils extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_devils);
 
-        for (int i = 0; i < 3; i++){
-            for (int j = 0; j < 3; j++){
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 String buttonID = "button_" + i + j;
                 int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                 buttons[i][j] = findViewById(resID);
@@ -50,41 +51,42 @@ public class play_devils extends AppCompatActivity
 
             }
         }
-        };
+    }
+
+    ;
 
     @Override
     public void onClick(View v) {
         boolean gamewon = false;
-        if (!((Button) v).getText().toString().equals("")){
+        if (!((Button) v).getText().toString().equals("")) {
             return;
         }
 
         roundCount += 1;
-        if (xORo == 'X'){
-            ((Button)v).setBackgroundResource(R.drawable.xbutton);
+        if (xORo == 'X') {
+            ((Button) v).setBackgroundResource(R.drawable.xbutton);
             ((Button) v).setTextSize(0);
-            ((Button)v).setText("X");
+            ((Button) v).setText("X");
 
 
-        }
-        else{
-            ((Button)v).setBackgroundResource(R.drawable.obutton);
-            ((Button)v).setTextSize(0);
-            ((Button)v).setText("O");
+        } else {
+            ((Button) v).setBackgroundResource(R.drawable.obutton);
+            ((Button) v).setTextSize(0);
+            ((Button) v).setText("O");
 
         }
 
 
         gamewon = checkWin();
-        if(gamewon){
+        if (gamewon) {
             AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
             builder.setTitle("Player " + winplayer + " wins!");
             builder.setMessage("Player " + winplayer + " triumphed.  Click Below to reset game and play again.");
             builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    for(int i = 0; i < 3; i++){
-                        for(int j = 0; j < 3; j++) {
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++) {
                             buttons[i][j].setText("");
                             buttons[i][j].setBackgroundResource(android.R.drawable.btn_default);
                             roundCount = 0;
@@ -97,15 +99,15 @@ public class play_devils extends AppCompatActivity
             });
             builder.show();
         }
-        if(roundCount == 9){
+        if (roundCount == 9) {
             AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
             builder.setTitle("Draw");
             builder.setMessage("This game has resulted in a draw.  Play again");
             builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    for(int i = 0; i < 3; i++){
-                        for(int j = 0; j < 3; j++) {
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++) {
                             buttons[i][j].setText("");
                             buttons[i][j].setBackgroundResource(android.R.drawable.btn_default);
                             roundCount = 0;
@@ -119,10 +121,10 @@ public class play_devils extends AppCompatActivity
             builder.show();
         }
 
-        if (p1Turn ){
+        if (p1Turn) {
             p1Turn = false;
             player_tv.setText(R.string.DevilsP2);
-        }else{
+        } else {
             p1Turn = true;
             player_tv.setText(R.string.DevilsP1);
 
@@ -130,15 +132,16 @@ public class play_devils extends AppCompatActivity
     }
 
     public void switchPlay() {
-        if(xORo == 'X'){
+        if (xORo == 'X') {
             xORo = 'O';
             xORo_Btn.setText("Playing: O, CLICK TO SWITCH TO: X");
 
-        }else{
+        } else {
             xORo = 'X';
             xORo_Btn.setText("Playing X, CLICK TO SWitch TO: O");
         }
     }
+
     public boolean checkWin() {
         String[][] field = new String[3][3];
         for (int i = 0; i < 3; i++) {
@@ -149,9 +152,9 @@ public class play_devils extends AppCompatActivity
 
         for (int i = 0; i < 3; i++) {
             if (field[i][0].equals(field[i][1]) && field[i][0].equals(field[i][2]) && (!(field[i][0]).equals(""))) {
-                if (p1Turn == true){
+                if (p1Turn == true) {
                     winplayer = "1";
-                }else{
+                } else {
                     winplayer = "2";
                 }
                 return true;
@@ -162,27 +165,27 @@ public class play_devils extends AppCompatActivity
 
         for (int i = 0; i < 3; i++) {
             if (field[0][i].equals(field[1][i]) && field[0][i].equals(field[2][i]) && (!(field[0][i].equals("")))) {
-                if (p1Turn == true){
+                if (p1Turn == true) {
                     winplayer = "1";
-                }else{
+                } else {
                     winplayer = "2";
                 }
                 return true;
             }
 
 
-            if(field[0][0].equals(field[1][1]) && field[0][0].equals(field[2][2]) && !(field[1][1].equals(""))) {
-                if (p1Turn == true){
+            if (field[0][0].equals(field[1][1]) && field[0][0].equals(field[2][2]) && !(field[1][1].equals(""))) {
+                if (p1Turn == true) {
                     winplayer = "1";
-                }else{
+                } else {
                     winplayer = "2";
                 }
                 return true;
             }
-            if(field[0][2].equals(field[1][1]) && field[0][2].equals(field[2][0]) && !(field[0][2].equals(""))){
-                if (p1Turn == true){
+            if (field[0][2].equals(field[1][1]) && field[0][2].equals(field[2][0]) && !(field[0][2].equals(""))) {
+                if (p1Turn == true) {
                     winplayer = "1";
-                }else{
+                } else {
                     winplayer = "2";
                 }
                 return true;
