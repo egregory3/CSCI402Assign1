@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ((TextView)findViewById(R.id.creditsLabel)).setText(Html.fromHtml("Brought to you by e<sup><font size=14px>2</font></sup>"));
+        ((TextView) findViewById(R.id.creditsLabel)).setText(Html.fromHtml("Brought to you by e<sup><font size=14px>2</font></sup>"));
 
 
         findViewById(R.id.game1Btn).setOnClickListener(new View.OnClickListener() {
@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //Open the PlayGame3 activity
     private void PlayGame3() {
         Intent intent = new Intent(getApplicationContext(),
                 PlayNumberScrabble.class);
