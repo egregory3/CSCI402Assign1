@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AppCenter.start(getApplication(), "608fc8f2-7a3f-45ce-ada7-8f27da3e5bce",
+                  Analytics.class, Crashes.class);
         ((TextView) findViewById(R.id.creditsLabel)).setText(Html.fromHtml("Brought to you by e<sup><font size=14px>2</font></sup>"));
 
 
